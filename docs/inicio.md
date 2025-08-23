@@ -10,4 +10,4 @@
 
 **Habilidades:** Organización, Resolución de problemas, Trabajo constante y bajo presión, Puntualidad, etc.
 
-<img src="../recursos/imgs/emilypic_1" alt="emilypic_1" width="420">
+<img src="../recursos/imgs/emilypic_1.jpeg" alt="emilypic_1" width="420">
