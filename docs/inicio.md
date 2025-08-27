@@ -16,4 +16,4 @@
 
 **Achievements:** Obtención de Beca Ada Byron en IBERO Puebla, Participación en Expociencias 2024, Acreditadora Diploma IB, etc.
 
-<img srs="../recursos/imgs/emilypic_1.jpeg" alt="pic" width="350">
+<img srs="../recursos/imgs/emilypic_1.jpeg" alt="a" width="400">
