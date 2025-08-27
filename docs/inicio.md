@@ -4,10 +4,16 @@
 
 **Edad:** 18 años
 
-**Carrera:** Ingeriería Mecatrónica
+**Carrera:** Ingeriería Mecatrónica, enfoque en robótica (ojalá)
+
+**Info de contacto:**
+- Número: 2214287095
+- Correo: 203070@iberopuebla.mx
 
 **Gustos:** Música (Arctic monkeys, Hozier, TV Girl), Tocar guitarra, Leer, Viajar, Jugar Videojuegos, DC Comics, Talachearle.
 
 **Habilidades:** Organización, Resolución de problemas, Trabajo constante y bajo presión, Puntualidad, etc.
+
+**Achievements:** Obtención de Beca Ada Byron en IBERO Puebla, Participación en Expociencias 2024, Acreditadora Diploma IB, etc.
 
 <img srs="../recursos/imgs/emilypic_1.jpeg" alt="pic" width="350">
