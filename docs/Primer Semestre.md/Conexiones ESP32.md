@@ -6,6 +6,12 @@ Como tal, este es muy similar a un Arduino, pudiendose programar con el mismo bl
 
 <img src="[(https://github.com/EmilyMZS/portafolio_iberopue/blob/main/docs/recursos/imgs/esp.jpg)]" alt="esp" width="420">
 
+## Proyecto 2
+
+El segundo uso de la ESP consistio en ahora añadirle botones al codigo previamente utilizado. Cuando el boton fuera presionado, el LED encendería, y cuando este no este presionado, debe de permanecer apagado.
+
+
+
 ## Proyecto 3
 
 El tercer uso del led consistio en poder encender el LED por medio de la conexión bluetooth del ESP, generando un código que lea el INPUT de el mensaje por bluetooth del celular a el ESP, los cuales estan conectados por esta via inalambrica. Cuando el ESP recibiera unn 1, el led debería de encener, y cuando reciba un 0, se apaga.
