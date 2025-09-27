@@ -6,6 +6,12 @@ Como tal, este es muy similar a un Arduino, pudiendose programar con el mismo bl
 
 <img src="[(https://github.com/EmilyMZS/portafolio_iberopue/blob/main/docs/recursos/imgs/esp.jpg)]" alt="esp" width="420">
 
+## Proyecto 1
+
+El primer uso que le dimos al ESP fue en un proyecto el cual se enfoco en poder usar delays para encender y apagar un led.
+
+
+
 ## Proyecto 2
 
 El segundo uso de la ESP consistio en ahora añadirle botones al codigo previamente utilizado. Cuando el boton fuera presionado, el LED encendería, y cuando este no este presionado, debe de permanecer apagado.
