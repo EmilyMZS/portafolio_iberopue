@@ -8,4 +8,4 @@ Como tal, este es muy similar a un Arduino, pudiendose programar con el mismo bl
 
 ## Proyecto 1
 
-<img src="[(https://github.com/EmilyMZS/portafolio_iberopue/blob/main/docs/recursos/imgs/espproyecto1.jfif)]" alt="esp" width="420">
+<img src="[(https://github.com/EmilyMZS/portafolio_iberopue/blob/main/docs/recursos/imgs/espproyecto1.jfif)]" alt="led_1" width="420">
