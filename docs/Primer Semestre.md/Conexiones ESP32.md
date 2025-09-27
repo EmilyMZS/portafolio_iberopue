@@ -1,2 +1,2 @@
 
-<img src="../recursos/imgs/ESP_32.webp" alt="arduino" width="420">
+<img src="../recursos/imgs/esp.jpg" alt="esp" width="420">
