@@ -10,7 +10,7 @@ Como tal, este es muy similar a un Arduino, pudiendose programar con el mismo bl
 
 El segundo uso de la ESP consistio en ahora añadirle botones al codigo previamente utilizado. Cuando el boton fuera presionado, el LED encendería, y cuando este no este presionado, debe de permanecer apagado.
 
-<img src="[(https://github.com/EmilyMZS/portafolio_iberopue/blob/main/docs/recursos/imgs/espproyecto1.jfif)]" alt="led_2" width="420">
+<img src="[(https://github.com/EmilyMZS/portafolio_iberopue/blob/main/docs/recursos/imgs/espproyecto2.jfif)]" alt="led_2" width="420">
 
 ## Proyecto 3
 
