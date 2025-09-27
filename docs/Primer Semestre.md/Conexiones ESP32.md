@@ -10,9 +10,7 @@ Como tal, este es muy similar a un Arduino, pudiendose programar con el mismo bl
 
 El primer uso que le dimos al ESP fue en un proyecto el cual se enfoco en poder usar delays para encender y apagar un led.
 
-https://raw.githubusercontent.com/EmilyMZS/portafolio_iberopue/refs/heads/main/docs/recursos/imgs/espproyecto3.jfif
-
-<img src="[(https://raw.githubusercontent.com/EmilyMZS/portafolio_iberopue/refs/heads/main/docs/recursos/imgs/espproyecto3.jfif)]" alt="led_2" width="420">
+<img src="[(https://raw.githubusercontent.com/EmilyMZS/portafolio_iberopue/refs/heads/main/docs/recursos/imgs/espproyecto3.jfif)]" alt="led_1" width="420">
 
 ## Proyecto 2
 
