@@ -1,2 +1,2 @@
 
-<img src="../recursos/imgs/ESP_32.webp" alt="ESP32" width="420">
+<img src="../recursos/imgs/ESP_32.webp" alt="ESP" width="420">
