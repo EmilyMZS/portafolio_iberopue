@@ -13,3 +13,6 @@ Tambien es importante saber que es la resolución, la cual se define como la pre
 La diferencia principal entre PWM y Resolución es que PWM es un control enfocado a la energía, y la resolución es un control al mecanismo. El PWM controla cuanta energia recibe el motor, y la resolución que tan fino es el control del motor.
 
 Podemos decir que la resolución define cuántos niveles puede tener el PWM, y el PWM determina cuánta energía se entrega en cada nivel.
+
+## Motor DC
+
