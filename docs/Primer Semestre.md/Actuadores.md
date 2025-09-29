@@ -17,3 +17,32 @@ Podemos decir que la resolución define cuántos niveles puede tener el PWM, y e
 ## Motor DC
 
 Con el motor DC nos enfocamos durante la practica a poder hacerlo girar de un lado a otro, y luego escalarlo para que luego regresara a el 0.
+
+´/*Control de 1 solo motor*/
+#define in1 27
+#define in2 14
+
+void setup() {
+  /*Declarar Pines Como salida*/
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+}
+
+void loop() {
+  /*ADELANTE*/
+  digitalWrite(in1, 0);
+  digitalWrite(in2, 1);
+  delay(1000);
+  /*ALTO*/
+  digitalWrite(in1, 0);
+  digitalWrite(in2, 0);
+  delay(1000);
+  /*ATRAS*/
+  digitalWrite(in1, 1);
+  digitalWrite(in2, 0);
+  delay(1000);
+  /*ALTO*/
+  digitalWrite(in1, 0);
+  digitalWrite(in2, 0);
+  delay(1000);
+}´
