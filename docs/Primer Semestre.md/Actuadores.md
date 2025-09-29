@@ -30,19 +30,42 @@ void setup() {
 
 void loop() {
   /*ADELANTE*/
+
+  
   digitalWrite(in1, 0);
+  
   digitalWrite(in2, 1);
+  
   delay(1000);
+
+  
   /*ALTO*/
+
+  
   digitalWrite(in1, 0);
+  
   digitalWrite(in2, 0);
+  
   delay(1000);
+
+  
   /*ATRAS*/
+
+  
   digitalWrite(in1, 1);
+  
   digitalWrite(in2, 0);
+  
   delay(1000);
+
+  
   /*ALTO*/
+
+  
   digitalWrite(in1, 0);
+  
   digitalWrite(in2, 0);
+  
   delay(1000);
+  
 }´
