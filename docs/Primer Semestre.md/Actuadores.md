@@ -16,3 +16,4 @@ Podemos decir que la resolución define cuántos niveles puede tener el PWM, y e
 
 ## Motor DC
 
+Con el motor DC nos enfocamos durante la practica a poder hacerlo girar de un lado a otro, y luego escalarlo para que luego regresara a el 0.
