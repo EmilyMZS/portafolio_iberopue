@@ -21,9 +21,9 @@ Con el motor DC nos enfocamos durante la practica a poder hacerlo girar de un la
 ´/*Control de 1 solo motor*/
 
 
-#define in1 27
+define in1 27
 
-#define in2 14
+define in2 14
 
 
 void setup() {
