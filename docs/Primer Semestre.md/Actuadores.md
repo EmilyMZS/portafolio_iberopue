@@ -89,4 +89,4 @@ Para que haya una velocidad en especifico, se define el PWM
 
 - #define PWM 12 // pin de velocidad
 - En voidSetup:
--    ledcAttachChannel(pwm, 1000, 8, 0); // pin=pwm, 1000 de frecuencia, 8 de resolucion (2^8 = 225. Resolución de 0-225), 0= constante. Siempre debe ser 0.
+ledcAttachChannel(pwm, 1000, 8, 0); // ledcAttachChannel= comando del ESP32, pwm=pin=12, 1000 = frecuencia, 8 = resolucion = (2^8 = 225. Resolución de 0-225), 0= constante. Siempre debe ser 0.
