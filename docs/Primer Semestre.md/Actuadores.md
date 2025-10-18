@@ -28,9 +28,8 @@ define in1 27
 
 define in2 14
 
-void setup() {
 
-  /*Declarar Pines Como salida*/
+void setup() {
 
   pinMode(in1, OUTPUT);
 
@@ -38,11 +37,12 @@ void setup() {
 
 }
 
+
 void loop() {
+
 
   /*ADELANTE*/
 
-  
   digitalWrite(in1, 0);
   
   digitalWrite(in2, 1);
@@ -52,7 +52,6 @@ void loop() {
   
   /*ALTO*/
 
-  
   digitalWrite(in1, 0);
   
   digitalWrite(in2, 0);
@@ -62,7 +61,6 @@ void loop() {
   
   /*ATRAS*/
 
-  
   digitalWrite(in1, 1);
   
   digitalWrite(in2, 0);
@@ -72,7 +70,6 @@ void loop() {
   
   /*ALTO*/
 
-  
   digitalWrite(in1, 0);
   
   digitalWrite(in2, 0);
