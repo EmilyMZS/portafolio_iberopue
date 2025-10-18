@@ -309,4 +309,4 @@ Sin embargo, se detectaron algunas mejoras posibles:
 
 - Practicar más con la aplicación para mejorar el control.
 
-En general, el proyecto permitió aplicar de manera práctica lo aprendido en Introducción a la Mecatrónica, y ayudó a entender mejor cómo se combinan la electrónica, la mecánica y la programación.
+En términos generales, el proyecto permitió poner en práctica los conocimientos adquiridos en la materia de Introducción a la Mecatrónica. Además, contribuyó a comprender de manera más clara la integración entre la electrónica, la mecánica y la programación. También evidenció que, para lograr un buen resultado, es necesario realizar numerosas pruebas y dedicar el tiempo suficiente para obtener un proyecto funcional y con el menor número posible de fallas.
