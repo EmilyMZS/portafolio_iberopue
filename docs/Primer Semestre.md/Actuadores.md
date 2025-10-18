@@ -97,3 +97,10 @@ ledcAttachChannel(pwm, 1000, 8, 0);
 El código completo con PWM queda así:
 
 <img src="../recursos/imgs/DCmotorPWM1.jfif" alt="Foto codigo motor" width="420">
+
+
+
+## Servomotor
+
+A diferencia del motor DC, el servomotor siempre funciona con PWM, y funciona con ángulos, generando movimientos más controlados y eficaces cuando se necesitan movimientos concretos.
+
