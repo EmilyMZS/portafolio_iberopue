@@ -107,7 +107,7 @@ pwm=pin=12
 El código completo con PWM queda así:
 
 
-<img src="../recursos/imgs/DCmotorPWM1.jfif" alt="Foto codigo motor" width="420">
+<img src="../recursos/imgs/DCmotorPWM1.jfif" alt="Foto codigo motor" width="520">
 
 
 
