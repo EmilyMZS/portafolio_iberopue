@@ -243,3 +243,19 @@ void setSpeed(int val) {
  
 }
 ```
+
+
+### Aplicación
+
+Para esta sección, se buscó una aplicación en la PlayStore en la cual se pudiera editar la programación de esta para que cuando se pulsara un boton, este mandara una letra al bluetooth y el bluetooth a la ESP, asi cotrolando el coche.
+
+La letra F se puso en el boton para ir hacia alfrente. B para atras. Y asi con todas las letras del código de acuerdo a las flechas que indicaba el control de la aplicación.
+
+
+## 6) Resultados
+
+
+## 7) Evidencias
+
+
+## 7) Conclusiones
