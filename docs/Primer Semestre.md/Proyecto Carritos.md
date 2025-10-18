@@ -9,58 +9,73 @@
 
 ## 2) Objetivos
 
-**General:** _Este proyecto busca la aplicación de los conocimientos adquiridos y practicados durante las clases y poder unirlo todo para crear un coche que compita con los de otros equipos._
+**General:** 
+
+_Aplicar los conocimientos vistos en clase para diseñar y construir un coche a control remoto que pueda competir con los de otros equipos.._
 
 **Específicos:**
 
-  - _Crear un sistema que permita el movimiento rápido y controlado del coche para poder atrapar una pelota y anotar en la portería de otro equipo._}
-    
-  - _Lograr meter más goles que el equipo opuesto con el que se compita._
+- _Hacer un sistema que permita mover el coche de forma rápida y controlada para atrapar una pelota y anotar goles._
+
+- _Lograr meter más goles que el equipo contrario durante la competencia._
 
 
 ## 3) Alcance y Exclusiones
 
-- **Incluye:** _Crear un coche con materiales y diseños propios, sistema de movimiento dinámico, control remoto a través de conexiones Bluetooth en un plazo de dos semanas aproximadamente._
+- **Incluye:** _Diseñar y construir un coche con materiales propios, con un sistema de movimiento dinámico y control remoto por Bluetooth, en un tiempo de alrededor de dos semanas._
 
 
 ## 4) Planeación
 
-Para poder desarrollar este proyecto, iniciamos dividiendo nuestro equipo en tareas. Dos se encargarían de elaborar los diseños para crear el coche y los demás haríamos trabajo de electrónica y programación para hacer el trabajo colaborativo, rápido y dinámico.
+Para comenzar el proyecto, el equipo se dividió en tareas. Dos integrantes se encargaron del diseño del coche, y los demás trabajaron en la parte electrónica y de programación. Así se pudo avanzar de manera más rápida y organizada.
 
-A continuación, hicimos una lista de los materiales que requeriríamos para desarrollar el trabajo:
+La lista de materiales que usamos fue la siguiente:
 
 - Puente H
-  
+
 - Dos motores DC
-  
-- Una protoboard
-  
-- Un microcontrolador ESP32
+
+- Protoboard
+
+- Microcontrolador ESP32
+
 - Jumpers
-  
+
 - Luces LED
-  
+
 - Pila de 9V
 
-Junto con esto, hicimos uso de MDF para poder generar la estructura y diseño del coche, junto con PLA para poder imprimir en 3D una pala para empujar la pelota a la portería del equipo contrario.
+También se utilizó MDF para construir la estructura del coche y PLA para imprimir en 3D una pala que sirviera para empujar la pelota hacia la portería del otro equipo.
 
 
 ## 5) Desarrollo
 
 ### Electrónica
 
-En la parte de la electrónica, iniciamos el trabajo conectando los motores a las bases hechas con MDF y conectándolos al puente H, asegurándonos de que la corriente y ground estuvieran conectados apropiadamente. Junto a esto, el IN1, IN2, IN3 e IN4 fueron modificados y conectados para que los motores se movieran apropiadamente hacia delante y atrás.
+Primero, se conectaron los motores a las bases hechas de MDF y luego al puente H. Se revisó que la corriente y la conexión a tierra estuvieran bien.
 
-Después, hicimos uso de las ESP32 para obtener las hojas de datos y hacer las conexiones a esta de manera que no se creara corto y luego los pines usados fueran escritos en el código de programación.
+Los pines IN1, IN2, IN3 e IN4 se conectaron para que los motores pudieran girar hacia adelante y hacia atrás según fuera necesario.
+
+Después, se conectó la ESP32, revisando las hojas de datos y cuidando que no hubiera cortos. Los pines usados se definieron más tarde en el código de programación.
 
 
 ### Programación
 
-En términos de la programación, teniendo ya los pines conectados en la parte de electrónica, desarrollamos un código que se pudiera conectar vía Bluetooth al celular de un compañero y de esta manera controlar el vehículo.
+Con las conexiones listas, se desarrolló un código para controlar el coche desde un celular mediante Bluetooth.
 
-Entonces, creamos diferentes funciones, cada una para cada comando: Derecha, izquierda, adelante, atrás y stop. Se hizo uso del PWM para poder generar los giros del coche, asignando que cuando se gire a la izquierda, la llanta derecha se detendría, y la izquierda seguiría encendida, para que de esta manera el coche gire. Se generó lo inverso para el giro derecho. Para que fuera derecho, las dos llantas van a la misma velocidad, y con stop, ambas llantas están en 0.
+Se crearon varias funciones: una para avanzar, otra para retroceder, una para girar a la derecha, otra a la izquierda y una más para detener el coche.
 
-Añadido a esto, dentro del voidLoop se ingresó una función que pudiera controlar la velocidad de los motores de acuerdo al número que se ingresara como mensaje a la ESP.
+Para controlar la velocidad y los giros se utilizó PWM (modulación por ancho de pulso). Por ejemplo:
+
+- Si gira a la izquierda, la llanta derecha se detiene y la izquierda sigue girando.
+
+- Si gira a la derecha, se hace lo contrario.
+
+- Para avanzar, ambas llantas giran a la misma velocidad.
+
+- Para detenerse, las dos se apagan.
+
+También se agregó una función que permite cambiar la velocidad del coche dependiendo del número que se envíe desde la aplicación Bluetooth.
 
 
 ``` codigo
@@ -251,16 +266,31 @@ void setSpeed(int val) {
 
 ### Aplicación
 
-Para esta sección, se buscó una aplicación en la Play Store en la cual se pudiera editar la programación de esta para que cuando se pulsara un botón, este mandara una letra al Bluetooth y el Bluetooth a la ESP, así controlando el coche.
+Para controlar el coche, se usó una aplicación descargada desde la Play Store. Esta app permite asignar letras a cada botón, que luego se envían por Bluetooth a la ESP32.
 
-La letra F se puso en el botón para ir hacia el frente. B para atrás. Y así con todas las letras del código de acuerdo a las flechas que indicaba el control de la aplicación.
+Se configuraron así:
+
+- F: Avanzar
+
+- B: Retroceder
+
+- L: Izquierda
+
+- R: Derecha
+
+- S: Detener
+
+Cada vez que se presiona un botón, la aplicación manda la letra y la ESP32 ejecuta la acción correspondiente.
 
 
 ## 6) Resultados y Evidencias
 
-Los resultados que se obtuvieron antes del concurso fueron que la electrónica funcionó de la manera apropiada. El coche se movía de acuerdo a lo que se le indicaba en el control y la programación; las luces LED que se usaron de decoración se encendían, la pala impresa en 3D encajó perfectamente con lo que se requería para controlar la pelota, y el diseño del coche fue llamativo a la vista.
+Antes del concurso, el coche funcionó correctamente: respondía bien a los comandos, las luces LED se encendían sin problema, la pala 3D encajó bien y el diseño del coche fue atractivo.
 
-Sin embargo, una vez que fue el concurso, desafortunadamente los motores fallaron porque uno se cayó a la hora de que la pala se atoró con una silla del salón en el que fue la competencia. Y en una segunda ronda, cuando este ya había sido asegurado, se volvió a caer. El control remoto no fue tan eficiente, ya que tardaba en funcionar y los movimientos eran muy bruscos, pero de ahí en fuera el funcionamiento del coche fue efectivo y cumplió las expectativas, aunque por desgracia no se metió ningún gol ni se obtuvo un lugar alto en las posiciones ganadoras.
+Durante la competencia, surgieron algunos problemas. Uno de los motores se cayó cuando la pala se atoró con una silla, y aunque se volvió a asegurar, volvió a soltarse en la segunda ronda. Además, el control Bluetooth respondía con algo de retraso y los movimientos eran un poco bruscos.
+
+A pesar de eso, el funcionamiento general fue bueno. El coche cumplió con lo planeado, aunque no logró anotar goles ni obtener un lugar destacado.
+
 
 https://youtube.com/shorts/-BoEvhaO5zg?feature=share
 
@@ -268,3 +298,15 @@ https://youtu.be/CgaybSU6_40
 
 
 ## 7) Conclusiones
+
+El proyecto y la competencia fueron una buena experiencia. La planeación y ejecución fueron adecuadas para el tiempo disponible. El coche funcionó correctamente y cumplió con los objetivos del curso.
+
+Sin embargo, se detectaron algunas mejoras posibles:
+
+- Hacer más pruebas antes de la competencia.
+
+- Asegurar mejor los motores.
+
+- Practicar más con la aplicación para mejorar el control.
+
+En general, el proyecto permitió aplicar de manera práctica lo aprendido en Introducción a la Mecatrónica, y ayudó a entender mejor cómo se combinan la electrónica, la mecánica y la programación.
