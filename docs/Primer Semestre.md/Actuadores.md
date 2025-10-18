@@ -18,7 +18,7 @@ Podemos decir que la resolución define cuántos niveles puede tener el PWM, y e
 
 Con el motor DC nos enfocamos durante la practica a poder hacerlo girar de un lado a otro, y luego escalarlo para que luego regresara a el 0.
 
-´/*Control de 1 solo motor*/
+´´´/*Control de 1 solo motor*/
 
 
 define in1 27
@@ -77,7 +77,7 @@ void loop() {
   
   delay(1000);
   
-}´
+}´´´
 
 Este codigo basicamente nos esta mostrando que in1 es una dirección de giro e in2 es otra. Cuando in1 este activo, va a girar para delante, e in2 debe de estar en 0. Para que vaya en reversa, debe ser viceversa. 
 
