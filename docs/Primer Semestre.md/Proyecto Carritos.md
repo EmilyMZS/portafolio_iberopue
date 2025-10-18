@@ -18,4 +18,4 @@
 
 ## 3) Alcance y Exclusiones
 
-- **Incluye:** Crear un coche con materiales y diseños propios, sistema de movimiento dinámico, control remoto a través de conexiones Bluetooth en un plazo de dos semanas aproximadamente._
+- **Incluye:** _Crear un coche con materiales y diseños propios, sistema de movimiento dinámico, control remoto a través de conexiones Bluetooth en un plazo de dos semanas aproximadamente._
