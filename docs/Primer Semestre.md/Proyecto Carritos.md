@@ -24,12 +24,18 @@
 Para poder desarrollar este proyecto, iniciamos dividiendo nuestro equipo en tareas. Dos se encargarían de elaborar los diseños para crear el coche y los demás hariamos trabajo de electrónica y programación para hacer el trabajo colaborativo, rápido y dinámico.
 
 A continuación, hicimos una lista de los materiales que requeriríamos para desarollar el trabajo:
+
 - Puente H
+  
 - Dos motores DC
+  
 - Una protoboard
+  
 - Un microcontrolador ESP32
 - Jumpers
+  
 - Luces LED
+  
 - Pila de 9V
 
 Junto con esto, hicimos uso de MDF para poder generar la estructura y diseño del coche, junto con PLA para poder imprimir en 3D una pala para empujar la pelota a la portería del equipo contrario.
