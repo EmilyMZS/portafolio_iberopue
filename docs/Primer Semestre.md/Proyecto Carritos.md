@@ -11,8 +11,8 @@
 
 **General:** _Este proyecto busca la aplicación de los conocimientos adquiridos y practicados durante las clases y poder unirlo todo para crear un coche que compita con los de otros equipos._
 **Específicos:**
-  - _Crear un sistema que permita el movimiento rápido y controlado del coche para poder atrapar una pelota y anotar en la portería de otro equipo_
-  - _Meter más goles que el equipo opuesto con el que se compita_
+  - _Crear un sistema que permita el movimiento rápido y controlado del coche para poder atrapar una pelota y anotar en la portería de otro equipo._
+  - _Meter más goles que el equipo opuesto con el que se compita._
 
 
 ## 3) Alcance y Exclusiones
@@ -22,9 +22,9 @@
 
 ## 4) Planeación
 
-Para poder desarrollar este proyecto, iniciamos dividiendo nuestro equipo en tareas. Dos se encargarían de elaborar los diseños para crear el coche y los demás hariamos trabajo de electrónica y programación para hacer el trabajo colaborativo, rápido y dinámico.
+Para poder desarrollar este proyecto, iniciamos dividiendo nuestro equipo en tareas. Dos se encargarían de elaborar los diseños para crear el coche y los demás haríamos trabajo de electrónica y programación para hacer el trabajo colaborativo, rápido y dinámico.
 
-A continuación, hicimos una lista de los materiales que requeriríamos para desarollar el trabajo:
+A continuación, hicimos una lista de los materiales que requeriríamos para desarrollar el trabajo:
 
 - Puente H
   
@@ -46,18 +46,18 @@ Junto con esto, hicimos uso de MDF para poder generar la estructura y diseño de
 
 ### Electrónica
 
-En la parte de la electrónica, iniciamos el trabajo conectando los motores a las bases hechas con MDF y conectandolos al puente H, asegurandonos de que la corriente y ground estuvieran conectados apropiadamente. Junto a esto, el IN1, IN2, IN3, e IN4 fueron modificados y conectados para que los motores se movieran apropiadamente hacia delante y atras.
+En la parte de la electrónica, iniciamos el trabajo conectando los motores a las bases hechas con MDF y conectándolos al puente H, asegurándonos de que la corriente y ground estuvieran conectados apropiadamente. Junto a esto, el IN1, IN2, IN3 e IN4 fueron modificados y conectados para que los motores se movieran apropiadamente hacia delante y atrás.
 
-Despues, hicimos uso de las ESP32 para obtener las hojas de datos y hacer las conexiones a esta de manera de que no se creara corto y luego los pines usados fueran escritos en el código de programación.
+Después, hicimos uso de las ESP32 para obtener las hojas de datos y hacer las conexiones a esta de manera que no se creara corto y luego los pines usados fueran escritos en el código de programación.
 
 
 ### Programación
 
-En términos de la programación, teniendo ya los pines conectados en la parte de electrónica, desarrollamos un código que se pudiera conectar via Bluetooth al celular de un compañero y de esta manera controlar el vehículo.
+En términos de la programación, teniendo ya los pines conectados en la parte de electrónica, desarrollamos un código que se pudiera conectar vía Bluetooth al celular de un compañero y de esta manera controlar el vehículo.
 
-Entonces, creamos diferentes funciones, cada una para cada comando: Derecha, izquierda, adelante, atras, y stop. Se hizo uso del PWM para poder generar los giros del coche, asignando que cuando se gire a la izquierda, la llanta derecha se detendría, y la izquierda seguiría encendida, para que de esta manera el coche gire. Se genero lo inverso para el giro derecho. Para que fuera derecho, las dos llantas van a la misma velocidad, y con stop, ambas llantas estan en 0.
+Entonces, creamos diferentes funciones, cada una para cada comando: Derecha, izquierda, adelante, atrás y stop. Se hizo uso del PWM para poder generar los giros del coche, asignando que cuando se gire a la izquierda, la llanta derecha se detendría, y la izquierda seguiría encendida, para que de esta manera el coche gire. Se generó lo inverso para el giro derecho. Para que fuera derecho, las dos llantas van a la misma velocidad, y con stop, ambas llantas están en 0.
 
-Añadido a esto, dentro del voidLoop se ingreso una función que pudiera controlar la velocidad de los motores de acuerdo al número que se ingresara como mensaje a la ESP.
+Añadido a esto, dentro del voidLoop se ingresó una función que pudiera controlar la velocidad de los motores de acuerdo al número que se ingresara como mensaje a la ESP.
 
 
 ``` codigo
@@ -248,18 +248,20 @@ void setSpeed(int val) {
 
 ### Aplicación
 
-Para esta sección, se buscó una aplicación en la PlayStore en la cual se pudiera editar la programación de esta para que cuando se pulsara un boton, este mandara una letra al bluetooth y el bluetooth a la ESP, asi cotrolando el coche.
+Para esta sección, se buscó una aplicación en la Play Store en la cual se pudiera editar la programación de esta para que cuando se pulsara un botón, este mandara una letra al Bluetooth y el Bluetooth a la ESP, así controlando el coche.
 
-La letra F se puso en el boton para ir hacia alfrente. B para atras. Y asi con todas las letras del código de acuerdo a las flechas que indicaba el control de la aplicación.
+La letra F se puso en el botón para ir hacia el frente. B para atrás. Y así con todas las letras del código de acuerdo a las flechas que indicaba el control de la aplicación.
 
 
 ## 6) Resultados y Evidencias
 
-Los resultados que se obtuvieron antes del concurso fue que la electrónica funcionó de la manera apropiada. El coche se movia de acuerdo a lo que se le indicaba en el control y la programación, las luces led que se usaron de decoración se encendian, la pala impresa en 3D encajo perfectamente con lo que se requería para controlar la pelota, y el diseño del coche fue llamativo a la vista.
+Los resultados que se obtuvieron antes del concurso fueron que la electrónica funcionó de la manera apropiada. El coche se movía de acuerdo a lo que se le indicaba en el control y la programación; las luces LED que se usaron de decoración se encendían, la pala impresa en 3D encajó perfectamente con lo que se requería para controlar la pelota, y el diseño del coche fue llamativo a la vista.
 
-Sin embargo, una vez que fue el concurso, desafortunadamente los motores fallaron porque uno se cayó a la hora de que la pala se atoró con una silla del salón en el que fue la competencia. Y en una segunda ronda, cuando este ya había sido asegurado, se volvió a caer. El control remoto no fue tan eficiente ya que tardaba en funcionar y los movimientos eran muy bruscos, pero de ahí en fuera el funcionamiento del coche fue efectivo y cumplio las expectativas, aunque por desgracia no se metió ningun gol ni se obtuvo un lugar alto en las posiciones ganadoras.
+Sin embargo, una vez que fue el concurso, desafortunadamente los motores fallaron porque uno se cayó a la hora de que la pala se atoró con una silla del salón en el que fue la competencia. Y en una segunda ronda, cuando este ya había sido asegurado, se volvió a caer. El control remoto no fue tan eficiente, ya que tardaba en funcionar y los movimientos eran muy bruscos, pero de ahí en fuera el funcionamiento del coche fue efectivo y cumplió las expectativas, aunque por desgracia no se metió ningún gol ni se obtuvo un lugar alto en las posiciones ganadoras.
 
 https://youtube.com/shorts/-BoEvhaO5zg?feature=share
+
+https://youtu.be/CgaybSU6_40
 
 
 ## 7) Conclusiones
