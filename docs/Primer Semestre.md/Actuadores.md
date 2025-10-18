@@ -21,6 +21,7 @@ Con el motor DC nos enfocamos durante la practica a poder hacerlo girar de un la
 
 
 ``` codigo
+
 /*Control de 1 solo motor*/
 
 define in1 27
@@ -78,4 +79,5 @@ void loop() {
   
   delay(1000);
   
-}```
+}
+```
