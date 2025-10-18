@@ -12,6 +12,7 @@
 **General:** _Este proyecto busca la aplicación de los conocimientos adquiridos y practicados durante las clases y poder unirlo todo para crear un coche que compita con los de otros equipos._
 **Específicos:**
   - _Crear un sistema que permita el movimiento rápido y controlado del coche para poder atrapar una pelota y anotar en la portería de otro equipo_
+  - _Meter más goles que el equipo opuesto con el que se compita_
 
 
 ## 3) Alcance y Exclusiones
@@ -252,10 +253,13 @@ Para esta sección, se buscó una aplicación en la PlayStore en la cual se pudi
 La letra F se puso en el boton para ir hacia alfrente. B para atras. Y asi con todas las letras del código de acuerdo a las flechas que indicaba el control de la aplicación.
 
 
-## 6) Resultados
+## 6) Resultados y Evidencias
 
+Los resultados que se obtuvieron antes del concurso fue que la electrónica funcionó de la manera apropiada. El coche se movia de acuerdo a lo que se le indicaba en el control y la programación, las luces led que se usaron de decoración se encendian, la pala impresa en 3D encajo perfectamente con lo que se requería para controlar la pelota, y el diseño del coche fue llamativo a la vista.
 
-## 7) Evidencias
+Sin embargo, una vez que fue el concurso, desafortunadamente los motores fallaron porque uno se cayó a la hora de que la pala se atoró con una silla del salón en el que fue la competencia. Y en una segunda ronda, cuando este ya había sido asegurado, se volvió a caer. El control remoto no fue tan eficiente ya que tardaba en funcionar y los movimientos eran muy bruscos, pero de ahí en fuera el funcionamiento del coche fue efectivo y cumplio las expectativas, aunque por desgracia no se metió ningun gol ni se obtuvo un lugar alto en las posiciones ganadoras.
+
+https://youtube.com/shorts/-BoEvhaO5zg?feature=share
 
 
 ## 7) Conclusiones
