@@ -113,3 +113,7 @@ A diferencia del motor DC, el servomotor siempre funciona con PWM, y funciona co
 ## Evidencias
 
 https://youtube.com/shorts/H03ZWURkvD8?feature=share
+
+<img src="../recursos/imgs/dc_evidencia.jfif" alt="Fotodc_ev" width="420">
+
+<img src="../recursos/imgs/servo_evidencia.jfif" alt="Fotoservo_ev" width="420">
