@@ -23,3 +23,12 @@ El segundo uso de la ESP consistio en ahora añadirle botones al codigo previame
 El tercer uso del led consistio en poder encender el LED por medio de la conexión bluetooth del ESP, generando un código que lea el INPUT de el mensaje por bluetooth del celular a el ESP, los cuales estan conectados por esta via inalambrica. Cuando el ESP recibiera unn 1, el led debería de encener, y cuando reciba un 0, se apaga.
 
 <img src="[(https://github.com/EmilyMZS/portafolio_iberopue/blob/main/docs/recursos/imgs/espproyecto1.jfif)]" alt="led_3" width="420">
+
+
+## Evidencias
+
+1. https://youtube.com/shorts/S92fErVGLRo?feature=share
+
+2. https://youtube.com/shorts/ofZKnvaHk9Y?feature=share
+
+3. https://youtube.com/shorts/QJc2S6VjcBQ?feature=share
