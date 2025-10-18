@@ -2,21 +2,21 @@
 
 Los actuadores son dispositivos electrónicos y electromecánicos que convierten energía en movimiento o fuerza. Estos son muy útiles en términos de automatización de proyectos.
 
-En el caso de lo que se aprendio a usar, se utilizaron mayormente motores DC y al final servomotores.
+En el caso de lo que se aprendió a usar, se utilizaron mayormente motores DC y al final servomotores.
 
-Algo muy importante de este tipo de motores es que funcionan con un cierto voltaje (12v el DC, y 5v los servo), y que tienen una caracteristica conocida como PWM.
+Algo muy importante de este tipo de motores es que funcionan con un cierto voltaje (12 V el DC y 5 V los servo) y que tienen una característica conocida como PWM.
 
-El PWM (Modulación por Ancho de Pulsos,) es un control de la energía que un motor usa, o en general una gran cantidad de dispositivos de corriente continua. En el caso de los motores, la regulación de la energía permite un mejor control sobre el funcionamiento y velocidad con la que gira o se mueve el motor. Al variar el ciclo de trabajo (el porcentaje de tiempo que la señal está encendida), se puede controlar la velocidad y el comportamiento del motor de forma eficiente.
+El PWM (Modulación por Ancho de Pulsos) es un control de la energía que un motor usa, o en general una gran cantidad de dispositivos de corriente continua. En el caso de los motores, la regulación de la energía permite un mejor control sobre el funcionamiento y la velocidad con la que gira o se mueve el motor. Al variar el ciclo de trabajo (el porcentaje de tiempo que la señal está encendida), se puede controlar la velocidad y el comportamiento del motor de forma eficiente.
 
-Tambien es importante saber que es la resolución, la cual se define como la precisión con la que se puede controlar la velocidad o posición del motor. Este funciona con bits, y por ejemplo, si al motor se le programa con 12 bits, significa que el motor tendra de 0-4096. Esto representa que el motor puede tener 4096 diferentes niveles en los que se mueva.
+También es importante saber qué es la resolución, la cual se define como la precisión con la que se puede controlar la velocidad o posición del motor. Este funciona con bits, y por ejemplo, si al motor se le programa con 12 bits, significa que el motor tendrá de 0 a 4096. Esto representa que el motor puede tener 4096 diferentes niveles en los que se mueva.
 
-La diferencia principal entre PWM y Resolución es que PWM es un control enfocado a la energía, y la resolución es un control al mecanismo. El PWM controla cuanta energia recibe el motor, y la resolución que tan fino es el control del motor.
+La diferencia principal entre PWM y resolución es que PWM es un control enfocado a la energía, y la resolución es un control al mecanismo. El PWM controla cuánta energía recibe el motor, y la resolución, qué tan fino es el control del motor.
 
 Podemos decir que la resolución define cuántos niveles puede tener el PWM, y el PWM determina cuánta energía se entrega en cada nivel.
 
 ## Motor DC
 
-Con el motor DC nos enfocamos durante la practica a poder hacerlo girar de un lado a otro, y luego escalarlo para que luego regresara a el 0.
+Con el motor DC nos enfocamos durante la práctica a poder hacerlo girar de un lado a otro, y luego escalarlo para que luego regresara al 0.
 
 
 
@@ -79,7 +79,7 @@ void loop() {
 }
 ```
 
-Con el código anterior el motor va a toda velocidad, pero para controlar esta velocidad con el PWM se hace:
+Con el código anterior, el motor va a toda velocidad, pero para controlar esta velocidad con el PWM se hace:
 
 ``` codigo
 - #define PWM 12 // pin de velocidad
@@ -87,14 +87,18 @@ Con el código anterior el motor va a toda velocidad, pero para controlar esta v
 ledcAttachChannel(pwm, 1000, 8, 0); 
 ```
 
-- ledcAttachChannel= comando del ESP32
-- pwm=pin=12
-- 1000 = frecuencia
-- 8 = resolucion = (2^8 = 225. Resolución de 0-225)
-- 0= constante. Siempre debe ser 0.Este codigo basicamente nos esta mostrando que in1 es una dirección de giro e in2 es otra. Cuando in1 este activo, va a girar para delante, e in2 debe de estar en 0. Para que vaya en reversa, debe ser viceversa.
+-ledcAttachChannel= comando del ESP32
 
+pwm=pin=12
+
+1000 = frecuencia
+
+8 = resolución = (2^8 = 225. Resolución de 0-225)
+
+0 = constante. Siempre debe ser 0. Este código básicamente nos está mostrando que in1 es una dirección de giro e in2 es otra. Cuando in1 esté activo, va a girar para delante, e in2 debe estar en 0. Para que vaya en reversa, debe ser viceversa.
 
 El código completo con PWM queda así:
+
 
 <img src="../recursos/imgs/DCmotorPWM1.jfif" alt="Foto codigo motor" width="420">
 
@@ -102,7 +106,8 @@ El código completo con PWM queda así:
 
 ## Servomotor
 
-A diferencia del motor DC, el servomotor siempre funciona con PWM, y funciona con ángulos, generando movimientos más controlados y eficaces cuando se necesitan movimientos concretos.
+A diferencia del motor DC, el servomotor siempre debe tener un PWM, y funciona con ángulos, generando movimientos más controlados y eficaces cuando se necesitan movimientos concretos.
+
 
 <img src="../recursos/imgs/ServomotorPWM1.jfif" alt="Fotoservo1" width="420">
 
