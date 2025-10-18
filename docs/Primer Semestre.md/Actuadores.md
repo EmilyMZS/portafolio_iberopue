@@ -91,10 +91,7 @@ ledcAttachChannel(pwm, 1000, 8, 0);
 - pwm=pin=12
 - 1000 = frecuencia
 - 8 = resolucion = (2^8 = 225. Resolución de 0-225)
-- 0= constante. Siempre debe ser 0.Este codigo basicamente nos esta mostrando que in1 es una dirección de giro e in2 es otra. Cuando in1 este activo, va a girar para delante, e in2 debe de estar en 0. Para que vaya en reversa, debe ser viceversa. 
+- 0= constante. Siempre debe ser 0.Este codigo basicamente nos esta mostrando que in1 es una dirección de giro e in2 es otra. Cuando in1 este activo, va a girar para delante, e in2 debe de estar en 0. Para que vaya en reversa, debe ser viceversa.
 
-Para que el motor pare, se ponen los dos in en 0 para que pare. Y se usan delays de acuerdo a lo necesario.
 
-Como se puede ver, esto solo es de prendido y apagado sin velocidades determinadas.
-
-Para que haya una velocidad en
+El código completo con PWM queda así:
