@@ -95,3 +95,5 @@ ledcAttachChannel(pwm, 1000, 8, 0);
 
 
 El código completo con PWM queda así:
+
+<img src="../recursos/imgs/DCmotorPWM.jfif" alt="Foto codigo motor" width="420">
