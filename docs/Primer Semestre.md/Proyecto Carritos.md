@@ -12,7 +12,7 @@
 **General:** _Este proyecto busca la aplicación de los conocimientos adquiridos y practicados durante las clases y poder unirlo todo para crear un coche que compita con los de otros equipos._
 **Específicos:**
   - _Crear un sistema que permita el movimiento rápido y controlado del coche para poder atrapar una pelota y anotar en la portería de otro equipo._
-  - _Meter más goles que el equipo opuesto con el que se compita._
+  - _Lograr meter más goles que el equipo opuesto con el que se compita._
 
 
 ## 3) Alcance y Exclusiones
