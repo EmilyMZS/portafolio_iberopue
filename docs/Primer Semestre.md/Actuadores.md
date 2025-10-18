@@ -14,6 +14,11 @@ La diferencia principal entre PWM y resolución es que PWM es un control enfocad
 
 Podemos decir que la resolución define cuántos niveles puede tener el PWM, y el PWM determina cuánta energía se entrega en cada nivel.
 
+## Puente H
+
+El puente H es un circuito que se utiliza para regular energía y controlar el funcionamiento de motores DC
+
+
 ## Motor DC
 
 Con el motor DC nos enfocamos durante la práctica a poder hacerlo girar de un lado a otro, y luego escalarlo para que luego regresara al 0.
