@@ -108,7 +108,9 @@ pwm=pin=12
 El código completo con PWM queda así:
 
 
-<img src="../recursos/imgs/DCmotorPWM1.jfif" alt="Foto codigo motor" width="520">
+<img src="../recursos/imgs/DCmotorPWM1.png" alt="codigodc1" width="420">
+
+<img src="../recursos/imgs/DCmotorPWM2.png" alt="codigodc2" width="420">
 
 
 
@@ -117,9 +119,9 @@ El código completo con PWM queda así:
 A diferencia del motor DC, el servomotor siempre debe tener un PWM, y funciona con ángulos, generando movimientos más controlados y eficaces cuando se necesitan movimientos concretos.
 
 
-<img src="../recursos/imgs/ServomotorPWM1.jfif" alt="Fotoservo1" width="420">
+<img src="../recursos/imgs/ServomotorPWM1.png" alt="Fotoservo1" width="420">
 
-<img src="../recursos/imgs/ServomotorPWM2.jfif" alt="Fotoservo2" width="420">
+<img src="../recursos/imgs/ServomotorPWM2.png" alt="Fotoservo2" width="420">
 
 
 
