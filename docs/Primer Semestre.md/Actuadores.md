@@ -19,7 +19,7 @@ Podemos decir que la resolución define cuántos niveles puede tener el PWM, y e
 El puente H es un circuito que se utiliza para regular energía y controlar el funcionamiento de motores DC. Tiene las conexiones de IN1 a las permitidas por el puente H, y estas se utilizan para conectar las polaridades de uno o más motores. Junto a esto, el puente se alimenta con mínimo 5 V y tiene pins out para conectarlos a un microcontrolador o a una protoboard.
 
 
-<img src="../recursos/imgs/Puente H (1).jpg" alt="puenteh" width="420">
+<img src="../recursos/imgs/Puente H (1).jpg" alt="puenteh" width="320">
 
 
 ## Motor DC
