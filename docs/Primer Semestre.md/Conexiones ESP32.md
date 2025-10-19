@@ -8,7 +8,6 @@ Como tal, este es muy similar a un Arduino, pudiéndose programar con el mismo b
 <img src="../recursos/imgs/esp.jpg" alt="esp" width="420">
 
 
-
 ## Proyecto 1
 
 El primer uso que le dimos al ESP fue en un proyecto, el cual se enfocó en poder usar delays para encender y apagar un led.
