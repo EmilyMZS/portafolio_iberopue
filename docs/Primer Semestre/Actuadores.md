@@ -19,7 +19,7 @@ Podemos decir que la resolución define cuántos niveles puede tener el PWM, y e
 El puente H es un circuito que se utiliza para regular energía y controlar el funcionamiento de motores DC. Tiene las conexiones de IN1 a las permitidas por el puente H, y estas se utilizan para conectar las polaridades de uno o más motores. Junto a esto, el puente se alimenta con mínimo 5 V y tiene pins out para conectarlos a un microcontrolador o a una protoboard.
 
 
-<img src="../recursos/imgs/puenteh.jpg" alt="puente" width="420">
+<img src="../recursos/imgs/puenteh.jpg" alt="puenteh" width="420">
 
 
 ## Motor DC
@@ -108,9 +108,9 @@ pwm=pin=12
 El código completo con PWM queda así:
 
 
-<img src="../recursos/imgs/DCmotorPWM1.png" alt="codigodc1" width="420">
+<img src="../recursos/imgs/DCmotorPWM1.png" alt="coddc1" width="420">
 
-<img src="../recursos/imgs/DCmotorPWM2.png" alt="codigodc2" width="420">
+<img src="../recursos/imgs/DCmotorPWM2.png" alt="coddc2" width="420">
 
 
 
@@ -119,9 +119,9 @@ El código completo con PWM queda así:
 A diferencia del motor DC, el servomotor siempre debe tener un PWM, y funciona con ángulos, generando movimientos más controlados y eficaces cuando se necesitan movimientos concretos.
 
 
-<img src="../recursos/imgs/ServomotorPWM1.png" alt="Fotoservo1" width="420">
+<img src="../recursos/imgs/ServomotorPWM1.png" alt="Fotoserv1" width="420">
 
-<img src="../recursos/imgs/ServomotorPWM2.png" alt="Fotoservo2" width="420">
+<img src="../recursos/imgs/ServomotorPWM2.png" alt="Fotoserv2" width="420">
 
 
 
@@ -129,6 +129,6 @@ A diferencia del motor DC, el servomotor siempre debe tener un PWM, y funciona c
 
 https://youtube.com/shorts/H03ZWURkvD8?feature=share
 
-<img src="../recursos/imgs/dc_evidencia.jfif" alt="Fotodc_ev" width="420">
+<img src="../recursos/imgs/dc_evidencia.jfif" alt="Fotodc_evd" width="420">
 
-<img src="../recursos/imgs/servo_evidencia.jfif" alt="Fotoservo_ev" width="420">
+<img src="../recursos/imgs/servo_evidencia.jfif" alt="Fotoservo_evd" width="420">
