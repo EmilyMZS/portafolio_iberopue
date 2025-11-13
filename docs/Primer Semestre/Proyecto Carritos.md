@@ -282,7 +282,7 @@ Se configuraron así:
 
 Cada vez que se presiona un botón, la aplicación manda la letra y la ESP32 ejecuta la acción correspondiente.
 
-<img src="../Primer Semestre/app1.jpeg" alt="app1" width="420">
+<img src="../Primer Semestre/app1.jpeg" alt="app_1" width="420">
 
 <img src="../recursos/imgs/app2.jpeg" alt="app2" width="420">
 
