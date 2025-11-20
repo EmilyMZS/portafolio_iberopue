@@ -288,7 +288,7 @@ Cada vez que se presiona un botón, la aplicación manda la letra y la ESP32 eje
 
 <img src="../recursos/imgs/app3.jpeg" alt="app3" width="420">
 
-<img src="../recursos/imgs/emilypic_1.jpeg" alt="Foto yo" width="420">
+![app1](https://github.com/user-attachments/assets/6a306f05-4caf-4d8a-b57f-e822fe358844)
 
 ## 6) Resultados y Evidencias
 
