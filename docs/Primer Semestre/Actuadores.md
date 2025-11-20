@@ -119,9 +119,9 @@ El código completo con PWM queda así:
 A diferencia del motor DC, el servomotor siempre debe tener un PWM, y funciona con ángulos, generando movimientos más controlados y eficaces cuando se necesitan movimientos concretos.
 
 
-<img src="../recursos/imgs/servomotorpwmuno.png" alt="serv uno" width="420">
+<img width="434" height="578" alt="servomotorpwmuno" src="https://github.com/user-attachments/assets/d4919eca-11b5-41ce-bbc3-f943b678f22f" />
 
-<img src="../recursos/imgs/ServomotorPWM2.png" alt="Fotoserv2" width="420">
+<img width="361" height="481" alt="ServomotorPWM2" src="https://github.com/user-attachments/assets/25a1a426-953b-49a7-af83-fed2a94cca1c" />
 
 
 
