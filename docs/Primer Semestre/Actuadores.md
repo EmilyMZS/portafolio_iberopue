@@ -129,6 +129,6 @@ A diferencia del motor DC, el servomotor siempre debe tener un PWM, y funciona c
 
 https://youtube.com/shorts/H03ZWURkvD8?feature=share
 
-<img src="../recursos/imgs/dc_evidencia.jfif" alt="Fotodc_evd" width="420">
+<img width="361" height="481" alt="dc_evidencia" src="https://github.com/user-attachments/assets/2d9449cf-f90f-4cce-996e-bc7b2e636edf" />
 
-<img src="../recursos/imgs/servo_evidencia.jfif" alt="Fotoservo_evd" width="420">
+<img width="361" height="481" alt="servo_evidencia" src="https://github.com/user-attachments/assets/eb6d5183-d750-466c-92e6-53d8f035f3d1" />
