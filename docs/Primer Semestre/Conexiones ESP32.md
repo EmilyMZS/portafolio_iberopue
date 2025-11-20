@@ -5,7 +5,7 @@ El ESP32 es un conjunto de minicontroladores que permite el control y ejecución
 Como tal, este es muy similar a un Arduino, pudiéndose programar con el mismo bloc de notas, pero este tiene la ventaja de que tiene muchos más pines para mejor procesamiento, la creación de proyectos más grandes si es necesario y, como anteriormente mencionado, la opción de poder controlarlo de manera Bluetooth.
 
 
-<img src="../recursos/imgs/esp.jpg" alt="esp" width="420">
+![esp](https://github.com/user-attachments/assets/8699ee7e-92ab-408c-a739-43fe6996c147)
 
 
 ## Proyecto 1
