@@ -47,15 +47,13 @@ _Aplicar los conocimientos vistos en clase para diseñar y construir una platafo
  
 BluetoothSerial SerialBT;
  
-// ───── SERVOS ────────────────────────────────
 Servo servoX;
 Servo servoY;
  
 int posX = 90;
 int posY = 90;
 int paso = 3;
- 
-// ───── PID PARA EJE Y ────────────────────────
+
 float Kp = 1.0;
 float Ki = 0.5;
 float Kd = 0.1;
@@ -68,7 +66,6 @@ double derY = 0;
 unsigned long t_prev = 0;
 double dt = 0;
  
-// Activar o desactivar PID en eje Y
 bool PID_enabled = false;
  
 void setup() {
@@ -77,7 +74,7 @@ void setup() {
  
   Serial.println("Bluetooth listo. Esperando comandos...");
  
-  servoX.attach(27);   // Cambia pines si quieres
+  servoX.attach(27);   
   servoY.attach(14);
  
   servoX.write(posX);
@@ -88,15 +85,11 @@ void setup() {
  
 void loop() {
  
-  // ============================================================
-  //    LECTURA DE COMANDOS BLUETOOTH (CONTROL MANUAL)
-  // ============================================================
   if (SerialBT.available()) {
     String cmd = SerialBT.readStringUntil('\n');
     cmd.trim();
     Serial.println(cmd);
  
-    // ───── Comandos manuales de servo X ─────────
     if (cmd == "Derecha") {
       posX += paso;
     }
@@ -107,7 +100,6 @@ void loop() {
       posX = 90;
     }
  
-    // ───── Comandos manuales de servo Y ─────────
     else if (cmd == "Arriba") {
       posY -= paso;
       PID_enabled = false;
@@ -128,9 +120,6 @@ void loop() {
     servoY.write(posY);
   }
  
-  // ============================================================
-  //    CONTROL PID DEL SERVO Y (SI ESTÁ ACTIVADO)
-  // ============================================================
   if (PID_enabled) {
     unsigned long t_now = millis();
     dt = (t_now - t_prev) / 1000.0;
@@ -141,7 +130,6 @@ void loop() {
  
     float u = Kp * errorY + Ki * integralY + Kd * derY;
  
-    // Aplicar PID al servo Y
     posY = 90 + (int)(u * 0.05);
     posY = constrain(posY, 0, 180);
     servoY.write(posY);
@@ -149,10 +137,8 @@ void loop() {
     errorY_prev = errorY;
     t_prev = t_now;
   }
- 
-  // ============================================================
-  //    IMPRESIÓN PARA DEPURACIÓN
-  // ============================================================
+
+
   Serial.print("X=");
   Serial.print(posX);
   Serial.print("  Y=");
@@ -160,7 +146,7 @@ void loop() {
   Serial.print("  ErrY=");
   Serial.println(errorY);
  
-  delay(10);  // Loop rápido para servos
+  delay(10);  
 }
  
 ```
