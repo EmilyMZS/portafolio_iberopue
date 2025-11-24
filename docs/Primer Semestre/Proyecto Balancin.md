@@ -42,8 +42,8 @@ _Aplicar los conocimientos vistos en clase para diseñar y construir una platafo
 
 ### Codigo Arduino
 ``` codigo arduino
-#include <BluetoothSerial.h>
-#include <ESP32Servo.h>
+\#include <BluetoothSerial.h>
+\#include <ESP32Servo.h>
  
 BluetoothSerial SerialBT;
  
