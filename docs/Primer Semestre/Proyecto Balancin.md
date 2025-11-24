@@ -39,6 +39,8 @@ _Aplicar los conocimientos vistos en clase para diseñar y construir una platafo
 ### Programación
 
 
+
+### Codigo Arduino
 ``` codigo arduino
 #include <BluetoothSerial.h>
 #include <ESP32Servo.h>
@@ -163,7 +165,7 @@ void loop() {
  
 ```
 
-
+### Codigo Python
 ``` codigo python
 import cv2
 import numpy as np
