@@ -40,6 +40,9 @@ Ensamble completo y ajustes de los parámetros del PID para lograr un movimiento
 El diseño del balancín se basó en un mecanismo previamente visto en un video, adaptándolo a las necesidades del proyecto. Se incorporaron dos soportes laterales para servomotores y un soporte central con esfera para permitir el movimiento en los ejes X y Y.
 Las piezas que sostienen a los servomotores y la esfera de la mitad fueron impresas en 3D, y los demas materiales fueron cortados en MDF.
 
+<img width="985" height="410" alt="piezas_3d" src="https://github.com/user-attachments/assets/5489b7a9-9b3e-4970-bf42-e44b323f2a7a" />
+
+
 ### Programación
 El desarrollo del código incluye:
 
