@@ -10,33 +10,44 @@
 ## 2) Objetivos
 
 **General:**  
-_Aplicar los conocimientos vistos en clase para diseñar y construir una plataforma que logre balancear una pelota sin que esta caiga, utilizando reconocimiento de colores y control PID._
+_Diseñar y construir un sistema que mantenga una pelota centrada sobre una plataforma utilizando visión por computadora y control PID._
 
 **Específicos:**
-
-- _Generar el programa que lea la información de la cámara desde Python al detectar la pelota._
-- _Enviar esa información al Arduino para mover los servos según la posición._
-- _Evitar que la pelota se caiga mediante controladores PID en Arduino._
+- _Procesar la imagen de la cámara en Python para detectar la pelota._
+- _Enviar los datos obtenidos al Arduino mediante Bluetooth._
+- _Implementar control PID que ajuste los servomotores para estabilizar la plataforma._
 
 
 ## 3) Alcance y Exclusiones
 
-- **Incluye:** _Durante un mes, partiendo de códigos proporcionados por el profesor, modificarlos e integrarlos al modelo de balanceo, junto con la construcción del balancín y el uso de servos._
+- **Incluye:** _El proyecto contempla un mes de trabajo partiendo del código base proporcionado por el profesor, realizando modificaciones necesarias para adaptar el reconocimiento por cámara, la comunicación con Arduino y el control del mecanismo. Incluye también el diseño y fabricación del balancín y los soportes de servomotores._
 
 
 ## 4) Planeación
+La planeación del proyecto se estructuró en tres etapas principales:
 
+1. Ajustes al código base:
+Modificación del código de Arduino para interpretar correctamente los comandos enviados desde Python.
+2. Diseño mecánico en SolidWorks:
+Creación de los soportes para servomotores y del punto de apoyo del centro, siendo estos impresas en 3D y cortadas en MDF.
+3. Integración y calibración:
+Ensamble completo y ajustes de los parámetros del PID para lograr un movimiento estable del balancín.
 
 
 ## 5) Desarrollo
 
-### Electrónica
-(Descripción aquí…)
+### Diseño
+El diseño del balancín se basó en un mecanismo previamente visto en un video, adaptándolo a las necesidades del proyecto. Se incorporaron dos soportes laterales para servomotores y un soporte central con esfera para permitir el movimiento en los ejes X y Y.
+Las piezas que sostienen a los servomotores y la esfera de la mitad fueron impresas en 3D, y los demas materiales fueron cortados en MDF.
 
 ### Programación
-(Descripción aquí…)
+El desarrollo del código incluye:
 
----
+- Detección de la pelota mediante filtros HSV en Python.
+- Cálculo del error respecto al centro de la imagen.
+- Envío de instrucciones por Bluetooth hacia el Arduino.
+- Implementación de un controlador PID en Arduino para mover los servos de acuerdo con el error.
+- El sistema funciona de manera continua, permitiendo un ajuste constante de la plataforma para mantener la pelota dentro de la zona deseada.
 
 ### Código Arduino
 
@@ -233,4 +244,6 @@ cv2.destroyAllWindows()
 (Agregar fotos, videos, gráficas…)
 
 ## 7) Conclusiones
-(Conclusiones del proyecto)
+El proyecto permitió poner en practica los conceptos de mecatrónica, combinando diseño, control y visión por computadora. El sistema final deuestra cómo el uso de reconocimiento por cámara y control PID puede aplicarse a un mecanismo basico como balancear una pelota, a sistemas mas complejos que permiten que un proyecto funcione de manera apropiada.
+
+También se destaca la importancia de una buena organización y tiempos de trabajo definidos para lograr un proyecto exitoso.
