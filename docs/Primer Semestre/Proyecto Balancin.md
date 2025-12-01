@@ -247,6 +247,6 @@ cv2.destroyAllWindows()
 (Agregar fotos, videos, gráficas…)
 
 ## 7) Conclusiones
-El proyecto permitió poner en practica los conceptos de mecatrónica, combinando diseño, control y visión por computadora. El sistema final deuestra cómo el uso de reconocimiento por cámara y control PID puede aplicarse a un mecanismo basico como balancear una pelota, a sistemas mas complejos que permiten que un proyecto funcione de manera apropiada.
+El proyecto permitió poner en practica los conceptos de mecatrónica, combinando diseño, control y visión por computadora. El sistema final demuestra cómo el uso de reconocimiento por cámara y control PID puede aplicarse a un mecanismo basico como balancear una pelota, a sistemas mas complejos que permiten que un proyecto funcione de manera apropiada.
 
 También se destaca la importancia de una buena organización y tiempos de trabajo definidos para lograr un proyecto exitoso.
