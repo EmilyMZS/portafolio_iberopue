@@ -14,7 +14,9 @@ _Diseñar y construir un sistema que mantenga una pelota centrada sobre una plat
 
 **Específicos:**
 - _Procesar la imagen de la cámara en Python para detectar la pelota._
+  
 - _Enviar los datos obtenidos al Arduino mediante Bluetooth._
+  
 - _Implementar control PID que ajuste los servomotores para estabilizar la plataforma._
 
 
