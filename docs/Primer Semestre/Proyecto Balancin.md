@@ -244,7 +244,7 @@ cv2.destroyAllWindows()
 ---
 
 ## 6) Resultados y Evidencias
-(Agregar fotos, videos, gráficas…)
+![proceso_ensamble](https://github.com/user-attachments/assets/ba9a773c-0918-44b5-9a38-01a426a78a98)
 
 ## 7) Conclusiones
 El proyecto permitió poner en practica los conceptos de mecatrónica, combinando diseño, control y visión por computadora. El sistema final demuestra cómo el uso de reconocimiento por cámara y control PID puede aplicarse a un mecanismo basico como balancear una pelota, a sistemas mas complejos que permiten que un proyecto funcione de manera apropiada.
