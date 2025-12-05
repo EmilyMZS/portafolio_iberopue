@@ -59,93 +59,107 @@ El desarrollo del código incluye:
 ```cpp
 #include <BluetoothSerial.h>
 #include <ESP32Servo.h>
-
+ 
 BluetoothSerial SerialBT;
-
+ 
 Servo servoX;
 Servo servoY;
-
-int posX = 90;
-int posY = 90;
-int paso = 3;
-
-float Kp = 1.0;
-float Ki = 0.5;
-float Kd = 0.1;
-
-double errorY = 0;
-double errorY_prev = 0;
-double integralY = 0;
-double derY = 0;
-
-unsigned long t_prev = 0;
-double dt = 0;
-
-bool PID_enabled = false;
-
+ 
+// Configuración de servos
+// LÍMITES CORREGIDOS: X toma los límites que tenía Y y viceversa
+const int MIN_ANG_X = 120;   // Servo X mínimo
+const int MAX_ANG_X = 30;    // Servo X máximo
+const int CENTER_X = 100;    // Centro aproximado
+ 
+const int MIN_ANG_Y = 100;   // Servo Y mínimo
+const int MAX_ANG_Y = 10;    // Servo Y máximo
+const int CENTER_Y = 85;     // Centro aproximado
+ 
+// PID más rápido
+float Kp = 1.0;  
+float Ki = 0.01;
+float Kd = 0.2;
+ 
+// Variables X  
+int eX = 0;
+float integralX = 0;
+float prevErrorX = 0;
+float posX = CENTER_X;
+ 
+// Variables Y
+int eY = 0;
+float integralY = 0;
+float prevErrorY = 0;
+float posY = CENTER_Y;
+ 
+// Suavizado
+float maxStep = 3.0;  // ligeramente mayor para movimientos más rápidos
+ 
+unsigned long lastTime = 0;
+ 
 void setup() {
   Serial.begin(115200);
   SerialBT.begin("ESPbalancin");
-
-  Serial.println("Bluetooth listo. Esperando comandos...");
-
+ 
   servoX.attach(27);
   servoY.attach(14);
-
   servoX.write(posX);
   servoY.write(posY);
-
-  t_prev = millis();
+ 
+  lastTime = millis();
+  Serial.println("PID rápido con límites X/Y intercambiados listo");
 }
-
+ 
 void loop() {
-
-  if (SerialBT.available()) {
+  unsigned long now = millis();
+  float dt = (now - lastTime) / 1000.0;
+  if (dt <= 0) dt = 0.001;
+ 
+  // Leer errores de Bluetooth
+  while (SerialBT.available()) {
     String cmd = SerialBT.readStringUntil('\n');
     cmd.trim();
-    Serial.println(cmd);
-
-    if (cmd == "Derecha") posX += paso;
-    else if (cmd == "Izquierda") posX -= paso;
-    else if (cmd == "X_OK") posX = 90;
-
-    else if (cmd == "Arriba") { posY -= paso; PID_enabled = false; }
-    else if (cmd == "Abajo") { posY += paso; PID_enabled = false; }
-    else if (cmd == "Y_OK") { posY = 90; PID_enabled = false; }
-
-    posX = constrain(posX, 0, 180);
-    posY = constrain(posY, 0, 180);
-
-    servoX.write(posX);
-    servoY.write(posY);
+    if (cmd.startsWith("EX:")) eX = cmd.substring(3).toInt();
+    else if (cmd.startsWith("EY:")) eY = cmd.substring(3).toInt();
   }
-
-  if (PID_enabled) {
-    unsigned long t_now = millis();
-    dt = (t_now - t_prev) / 1000.0;
-    if (dt <= 0) dt = 0.001;
-
-    integralY += errorY * dt;
-    derY = (errorY - errorY_prev) / dt;
-
-    float u = Kp * errorY + Ki * integralY + Kd * derY;
-
-    posY = 90 + (int)(u * 0.05);
-    posY = constrain(posY, 0, 180);
-    servoY.write(posY);
-
-    errorY_prev = errorY;
-    t_prev = t_now;
-  }
-
-  Serial.print("X=");
-  Serial.print(posX);
-  Serial.print("  Y=");
-  Serial.print(posY);
-  Serial.print("  ErrY=");
-  Serial.println(errorY);
-
-  delay(10);
+ 
+  // ===== PID X =====
+  float errorX_PID = -eX;  // invertir X
+  integralX += errorX_PID * dt;
+  float derivativeX = (errorX_PID - prevErrorX) / dt;
+  float outputX = Kp * errorX_PID + Ki * integralX + Kd * derivativeX;
+  float targetX = CENTER_X + outputX;
+ 
+  // Suavizado
+  float diffX = targetX - posX;
+  if (abs(diffX) > maxStep) posX += (diffX > 0 ? maxStep : -maxStep);
+  else posX = targetX;
+ 
+  posX = constrain(posX, MIN_ANG_X, MAX_ANG_X);
+  prevErrorX = errorX_PID;
+ 
+  // ===== PID Y =====
+  float errorY_PID = -eY;  
+  integralY += errorY_PID * dt;
+  float derivativeY = (errorY_PID - prevErrorY) / dt;
+  float outputY = Kp * errorY_PID + Ki * integralY + Kd * derivativeY;
+  float targetY = CENTER_Y + outputY;
+ 
+  float diffY = targetY - posY;
+  if (abs(diffY) > maxStep) posY += (diffY > 0 ? maxStep : -maxStep);
+  else posY = targetY;
+ 
+  posY = constrain(posY, MIN_ANG_Y, MAX_ANG_Y);
+  prevErrorY = errorY_PID;
+ 
+  // Mover servos
+  servoX.write(posX);
+  servoY.write(posY);
+ 
+  lastTime = now;
+ 
+  Serial.printf("EX=%d EY=%d | posX=%.1f posY=%.1f\n", eX, eY, posX, posY);
+  delay(20);
 }
 ```
 
@@ -158,89 +172,83 @@ import cv2
 import numpy as np
 import bluetooth
 import time
-
-# FUNCTION TO CONNECT TO ESP32
+ 
+# Configuración Bluetooth
 port = 1
 sock = bluetooth.BluetoothSocket()
-sock.settimeout(20)
-
-print("Attempting to connect to ESP32...")
+sock.settimeout(15)
+ 
+print("Conectando a ESP32...")
 while True:
     try:
-        sock.connect(("6C:C8:40:4D:AE:E6", port))
-        print("Connected to ESP32!")
+        sock.connect(("6C:C8:40:4D:AE:E6", port))  # Cambia por tu MAC
+        print("✔ Conectado a ESP32.")
         break
     except Exception as e:
-        print("Error in connection... retrying:", e)
+        print("Reintentando conexión:", e)
     time.sleep(1)
-
-video = cv2.VideoCapture(0)
-
+ 
+video = cv2.VideoCapture(1)
+time.sleep(0.5)
+ 
 while True:
-    ret, frame_bgr = video.read()
-    cv2.flip(frame_bgr, 1, frame_bgr)
+    ret, frame = video.read()
     if not ret:
         break
-
-    hsv = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2HSV)
-
-    low  = np.array([100, 60, 40], dtype=np.uint8)
+ 
+    # Rotar 90 grados a la derecha
+    frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+ 
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+ 
+    low = np.array([100, 60, 40], dtype=np.uint8)
     high = np.array([130, 255, 255], dtype=np.uint8)
     mask = cv2.inRange(hsv, low, high)
-
-    seg = cv2.bitwise_and(frame_bgr, frame_bgr, mask=mask)
-
+ 
     contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-
-    area_mayor = 0
-    for actual in contours:
-        area = cv2.contourArea(actual)
-        if area > area_mayor:
-            area_mayor = area
-            contorno_mayor = actual
-
-    cv2.drawContours(frame_bgr, contorno_mayor, -1, (0,255,0), 2)
-
-    (x,y), radius = cv2.minEnclosingCircle(contorno_mayor)
-    cv2.circle(frame_bgr, (int(x), int(y)), int(radius), (0,255,255), 2)
-    cv2.circle(frame_bgr, (int(x), int(y)), 2 , (0,0,255), 2)
-
-    print(x, y)
-
-    centrox = frame_bgr.shape[1] // 2
-    centroy = frame_bgr.shape[0] // 2
-    ErrorX = int(x) - centrox
-    ErrorY = int(y) - centroy
-
-    if ErrorX > 0:
-        direccionX ="Derecha\n"
-        sock.send(direccionX.encode())
-    elif ErrorX < 0:
-        direccionX ="Izquierda\n"
-        sock.send(direccionX.encode())
-    else:
-        direccionX= "X_OK\n"
-        sock.send(direccionX.encode())
-
-    if ErrorY > 0:
-        direccionY ="Abajo\n"
-        sock.send(direccionY.encode())
-    elif ErrorY < 0:
-        direccionY ="Arriba\n"
-        sock.send(direccionY.encode())
-    else:
-        direccionY= "Y_OK\n"
-        sock.send(direccionY.encode())
-
-    cv2.imshow("Original", frame_bgr)
-    cv2.imshow("Mask", mask)
-    cv2.imshow("Segmentado", seg)
-
+ 
+    centrox = frame.shape[1] // 2
+    centroy = frame.shape[0] // 2
+ 
+    # Dibuja centro de cámara (verde)
+    cv2.circle(frame, (centrox, centroy), 5, (0, 255, 0), 2)
+ 
+    if contours:
+        cont = max(contours, key=cv2.contourArea)
+        (x, y), radius = cv2.minEnclosingCircle(cont)
+        x, y = int(x), int(y)
+ 
+        # Dibuja centro de la pelota (rojo)
+        cv2.circle(frame, (x, y), 5, (0, 0, 255), -1)
+        cv2.circle(frame, (x, y), int(radius), (0, 255, 255), 2)
+ 
+        ErrorX_raw = x - centrox
+        ErrorY_raw = y - centroy
+ 
+        # Ajuste por rotación 90° y control diagonal invertido
+        ErrorX = -ErrorY_raw  # invertir eje X
+        ErrorY = ErrorX_raw   # invertir eje Y
+ 
+        # Envía errores
+        try:
+            sock.send(f"EX:{ErrorX}\n".encode())
+            sock.send(f"EY:{ErrorY}\n".encode())
+        except:
+            pass
+ 
+        cv2.putText(frame, f"EX:{ErrorX} EY:{ErrorY}", (20, 40),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+ 
+    cv2.imshow("Camara", frame)
+    cv2.imshow("Mascara", mask)
+ 
     if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
+        break  
+ 
 video.release()
 cv2.destroyAllWindows()
+sock.close()
+ 
 ```
 
 ---
