@@ -264,6 +264,8 @@ https://youtube.com/shorts/w0CxEOn6TXU?feature=share
 
 https://youtube.com/shorts/BMnnWa4znkY?feature=share
 
+https://youtube.com/shorts/F7ZjY1F8WCc?si=3SutnnJn3M5vtqOd
+
 ## 7) Conclusiones
 El proyecto permitió poner en practica los conceptos de mecatrónica, combinando diseño, control y visión por computadora. El sistema final demuestra cómo el uso de reconocimiento por cámara y control PID puede aplicarse a un mecanismo basico como balancear una pelota, a sistemas mas complejos que permiten que un proyecto funcione de manera apropiada.
 
